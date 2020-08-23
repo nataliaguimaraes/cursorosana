@@ -1,0 +1,24 @@
+
+  .footer{
+    background: #0E3F5C;  
+    display:flex;
+  }
+
+  .float-right{
+    float: right;
+  }
+
+  .top-info{
+    color: #FFFF;
+  }
+
+  .display-flex{
+    display:flex;
+  }
+
+
+  .background-white{
+    background-color: #FFFF !important;
+  }
+
+  

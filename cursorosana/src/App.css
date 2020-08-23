@@ -1,0 +1,10 @@
+
+
+.App{
+    background-image: url('./assets/images/bg2.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+

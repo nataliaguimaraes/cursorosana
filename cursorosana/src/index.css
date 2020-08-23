@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container-middle {
+  height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+}
+
+
+.form{
+  max-width: 500px;
+}
+
+
+.header{
+  margin-bottom: 3%;
+}
+
+.margin-top-5{
+  margin-top: 5% !important;
+}
+
+.margin-top-2{
+  margin-top: 2% !important;
+}
+
+
+.titulo{
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  font-style: normal;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: 'Muli', sans-serif;
+  font-weight: 900;
+  color: #242a37;
+  letter-spacing: 0px;
+  line-height: 34px;
+  text-align: left;
+}
+
+@media screen and (min-width: 901px) {
+  .titulo {
+    font-size: 60px;
+  }
+  .text{
+    font-size:30px;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 900px) {
+  .titulo {
+    font-size: 40px;
+  }
+  .text{
+    font-size:20px;
+  }
+}
+
+.text{
+  box-sizing: border-box;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: 1.6;
+  font-family: 'Rubik', sans-serif;
+  color: #767676;
+}
+
+.next-button {
+  background: #F97009 !important;
+  border-radius: 13px !important;
+  height: 5vh !important;
+  width: 100% !important;
+
+}
+
+.color-blue{
+  color: #004180;
+}
