@@ -1,1 +1,0 @@
-# curso rosana - frontend
