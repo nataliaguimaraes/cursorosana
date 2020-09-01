@@ -1,0 +1,29 @@
+.links .margin-top-15{
+    margin-top: 15% !important;
+  }
+
+
+  @media only screen and (min-width: 600px) {
+    .links .margin-top-15{
+      margin-top: 10% !important;
+    }
+  }
+
+.middle{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle .button {
+  background: #F97009 !important;
+  border-radius: 13px !important;
+ 
+}
+
+.middle .link{
+  height: 5vh !important;
+  width: 100% !important;
+  text-decoration: none;
+}

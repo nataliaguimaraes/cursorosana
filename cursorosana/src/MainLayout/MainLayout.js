@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import Header from '../components/Header/Header'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { Header } from '../components/Header/Header'
+import { makeStyles } from '@material-ui/core/styles';
 import { Container , Grid} from '@material-ui/core';
 import TopHeader from '../components/Header/TopHeader';
 import Footer from '../components/Footer/Footer';

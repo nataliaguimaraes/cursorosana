@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Drawer, Divider, Hidden, Tab, Tabs, List, ListItem, Toolbar, AppBar, ListItemText, IconButton } from '@material-ui/core';
+import { Button, Drawer, Hidden, Tab, Tabs, List, ListItem, Toolbar, ListItemText, IconButton,   } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-
+import { Link } from 'react-router-dom';
 
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import './Header.css';
 
 import logo from '../../assets/images/CursoImagem_1.png'
-
-
 
 const drawerWidth = 240;
 
@@ -44,10 +42,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function Header(props) {
+export const Header = (props) => {
   const { window } = props;
   const classes = useStyles();
-  const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [value, setValue] = React.useState(0);
 
@@ -59,25 +56,27 @@ function Header(props) {
     setMobileOpen(!mobileOpen);
   };
 
-  const onClick = () => {
-    const { history } = props;
-        if (history) {
-            history.push({
-            pathname: '/preMatricula',
-            });
-        }
-  }
-
   const drawer = (
     <div>
-
-      <List>
-        {["",'o curso', 'Pré-Matrícula'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      
+      <List component="nav" aria-label="secondary mailbox folders">
+      <ListItem href='/home'>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem href='/curso'>
+          <ListItemText primary="o curso" />
+        </ListItem>
+        <ListItem href="/professores">
+          <ListItemText primary="Professores" />
+        </ListItem>
+        <ListItem href="/faleConosco">
+          <ListItemText primary="Fale Conosco" />
+        </ListItem>
+        <ListItem href="/preMatricula">
+          <ListItemText primary="Pré-matrícula" />
+        </ListItem>
       </List>
+      
     </div>
   );
 
@@ -101,19 +100,13 @@ function Header(props) {
                     <Tab
                     className="menu-button"
                     component="a"
+                    label="Home"
+                    href="/home"
+                    {...props}/>
+                    <Tab
+                    className="menu-button"
+                    component="a"
                     label="o curso"
-                    href="/curso"
-                    {...props}/>
-                    <Tab
-                    className="menu-button"
-                    component="a"
-                    label="professores"
-                    href="/curso"
-                    {...props}/>
-                    <Tab
-                    className="menu-button"
-                    component="a"
-                    label="Fale conosco"
                     href="/curso"
                     {...props}/>
                     <Tab
@@ -125,19 +118,19 @@ function Header(props) {
                     <Tab
                     className="menu-button"
                     component="a"
-                    href="/professores"
-                    label="Professores"
+                    href="/faleConosco"
+                    label="Fale conosco"
                     {...props}/>    
                   </Tabs>
+                  <Link to={{pathname:'/preMatricula'}}>
                   <Button
                   data-testid='buttonNext'
                   color='primary'
                   variant='contained'
                   className='pre-matricula-button '
-                  onClick={onClick}
                   >
                   Pré-matrícula
-                  </Button>
+                  </Button></Link>
                 </Hidden>
                   <IconButton
                     color="inherit"
@@ -184,4 +177,4 @@ Header.propTypes = {
   window: PropTypes.func,
 };
 
-export default Header;
+

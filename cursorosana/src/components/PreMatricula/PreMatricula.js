@@ -16,7 +16,8 @@ export const PreMatricula = (props) => {
     const [from, setFrom] = useState('')
 
 
-    const onClick = async () => {
+    const onClick = () => {
+
         if (isEmailInvalid(emailAluno)) {
             setEmailAlunoInvalido(true);
         } else {
@@ -26,21 +27,24 @@ export const PreMatricula = (props) => {
         if (isTelephoneInvalid(celularAluno)) {
             setCelularAlunoInvalido(true);
         } else {
-            setCelularAlunoInvalido(true);
+            setCelularAlunoInvalido(false);
         }
 
-        const { history } = props;
-        if (history) {
-            history.push({
-            pathname: '/preMatricula2',
-            state: { aluno: aluno, 
-                emailAluno: emailAluno,
-                celularAluno: celularAluno,
-                interesse: interesse,
-                curso: curso,
-                from: from, 
-                },
-            });
+        alert(celularAlunoInvalido)
+        if(!emailAlunoInvalido && !celularAlunoInvalido){
+            const { history } = props;
+            if (history) {
+                history.push({
+                pathname: '/preMatriculaNext',
+                state: { aluno: aluno, 
+                    emailAluno: emailAluno,
+                    celularAluno: celularAluno,
+                    interesse: interesse,
+                    curso: curso,
+                    from: from, 
+                    },
+                });
+            }
         }
 
     }
@@ -57,8 +61,8 @@ export const PreMatricula = (props) => {
 
     return (<>
             <Grid >
-                <p class="titulo">Faça sua pré-matricula agora</p>
-                <p class="text">Venha para o curso da Prof. Rosana!</p>
+                <p className="titulo">Faça sua pré-matricula agora</p>
+                <p className="text">Venha para o curso da Prof. Rosana!</p>
                
                 <Divider className='margin-top-2'/>
                 <div className='form'>
@@ -69,7 +73,7 @@ export const PreMatricula = (props) => {
                 variant='outlined'
                 label='Nome do aluno'
                 fullWidth
-                required='true'
+                required
                 onChange={e => setAluno(e.target.value)}
                 inputProps={{
                     'data-testid': 'inputField1',
@@ -142,6 +146,19 @@ export const PreMatricula = (props) => {
 
                     </Select>
                 </FormControl>
+
+                <TextField
+                className='margin-top-5'
+                data-testid='textField6'
+                variant='outlined'
+                label='De onde você nos conhece?'
+                fullWidth
+                onChange={e => setFrom(e.target.value)}
+                inputProps={{
+                    'data-testid': 'inputField6',
+                    type: 'text',
+                }}
+                ></TextField>
 
                 <Button
                 data-testid='buttonNext'
