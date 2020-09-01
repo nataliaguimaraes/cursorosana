@@ -29,7 +29,7 @@ export const MainLayout = ({ children }) => {
   const classes = useStyles();
   
   return (
-    <>
+    <div className='App'>
     <TopHeader/>
     <Container component='main'>
       <Grid className='opacity container'>
@@ -42,7 +42,7 @@ export const MainLayout = ({ children }) => {
         </Grid>
     </Container>
     <Footer/>
-    </>
+    </div>
   )
 }
 

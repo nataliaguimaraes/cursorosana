@@ -30,8 +30,7 @@ export const PreMatricula = (props) => {
             setCelularAlunoInvalido(false);
         }
 
-        alert(celularAlunoInvalido)
-        if(!emailAlunoInvalido && !celularAlunoInvalido){
+        if(emailAlunoInvalido && celularAlunoInvalido){
             const { history } = props;
             if (history) {
                 history.push({
@@ -61,7 +60,7 @@ export const PreMatricula = (props) => {
 
     return (<>
             <Grid >
-                <p className="titulo">Faça sua pré-matricula agora</p>
+                <p className="titulo">Faça agora sua prématrícula no intensivo ENEM 2020.</p>
                 <p className="text">Venha para o curso da Prof. Rosana!</p>
                
                 <Divider className='margin-top-2'/>
